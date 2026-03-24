@@ -795,8 +795,7 @@ function enterPortal(role,nameOverride){
   document.getElementById('portal-badge').className='portal-badge '+p.badgeClass;
   document.getElementById('portal-badge').textContent=p.badge;
   document.getElementById('user-av').className='user-av '+p.avClass;
-  document.getElementById('user-av').textContent=p.avText;
-  document.getElementById('user-name').textContent=nameOverride||p.userName;
+document.getElementById('user-av').textContent = nameOverride ? nameOverride.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase() : p.avText;  document.getElementById('user-name').textContent=nameOverride||p.userName;
   buildSidebar(role);buildMobileNav(role);
   showPage(p.nav[0].items[0].id);
 }
